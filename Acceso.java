@@ -1,42 +1,43 @@
 public class Acceso
 {
-    private int ano;
-    private int mes;
-    private int dia;
-    private int hora;
-    private int minutos;
     
-    public Acceso(int ano, int mes, int dia, int hora, int minutos)
+    private String acceso;
+    
+    private String[] separador;
+    
+    public Acceso(String horaDeAcceso)
     {
-        this.ano = ano;
-        this.mes = mes;
-        this.dia = dia;
-        this.hora = hora;
-        this.minutos = minutos;
+        this.acceso = horaDeAcceso;
+        separador = horaDeAcceso.split(" ");
     }
     
-    public int getAno() 
+    public String getAno() 
     {
+        String ano = separador[0];
         return ano;
     }
     
-    public int getMes()
+    public String getMes()
     {
+        String mes = separador[1];
         return mes;
     }
     
-    public int getDia()
+    public String getDia()
     {
+        String dia = separador[2];
         return dia;
     }
     
-    public int getHora()
+    public String getHora()
     {
+        String hora = separador[3];
         return hora;
     }
     
-    public int getMinutos()
+    public String getMinutos()
     {
+        String minutos = separador[4];
         return minutos;
     }
 }

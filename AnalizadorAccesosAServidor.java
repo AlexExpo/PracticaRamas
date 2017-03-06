@@ -22,12 +22,7 @@ public class AnalizadorAccesosAServidor
             while (sc.hasNextLine()) {
                 String lineaLeida = sc.nextLine();               
                 String[] elementosLinea = lineaLeida.split(" ");
-                Acceso accesoActual = new Acceso(Integer.parseInt(elementosLinea[0]), 
-                                                 Integer.parseInt(elementosLinea[1]), 
-                                                 Integer.parseInt(elementosLinea[2]),
-                                                 Integer.parseInt(elementosLinea[3]), 
-                                                 Integer.parseInt(elementosLinea[4]));               
-                
+                Acceso accesoActual = new Acceso(elementosLinea[0] + " " + elementosLinea[1] + " " + elementosLinea[2] + " " + elementosLinea[3] + " " + elementosLinea[4]);               
                 accesos.add(accesoActual);
             }
             sc.close();
@@ -46,7 +41,7 @@ public class AnalizadorAccesosAServidor
             int[] accesosPorHora = new int[24];
     
             for (Acceso accesoActual : accesos) {
-                int horaAccesoActual = accesoActual.getHora();
+                int horaAccesoActual = Integer.parseInt(accesoActual.getHora());
                 accesosPorHora[horaAccesoActual] = accesosPorHora[horaAccesoActual] + 1;
             }
             
